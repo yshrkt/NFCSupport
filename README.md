@@ -15,7 +15,7 @@ This is support library for handling NFC NDEF Records.
 
 ## Usage
 
-* Text record
+* Text Record
 ```swift
 let record: NFCNDEFPayload = getRecord() // get record using CoreNFC
 let recordType = NFCNDEFWellknown.RecordType(rawData: record.type)
@@ -26,11 +26,11 @@ if recordType == .text {
     }
 }
 ```
-* URI record
+* URI Record
 ```swift
 if recordType == .uri {
     let uriRecord: NFCNDEFWellknown.URIRecord? = try? recordType.parse(with: record.payload)
-    if let uri = textRecord?.uri {
+    if let uri = uriRecord?.uri {
       print("uri: \(uri.absoluteString)")
     }
 }
