@@ -60,7 +60,7 @@ github "yshrkt/NFCSupport"
 
 ## Licence
 
-Elapse is released under the MIT license. [See LICENSE](https://github.com/yshrkt/Elapse/blob/master/LICENSE) for details.
+NFCSupport is released under the MIT license. [See LICENSE](https://github.com/yshrkt/NFCSupport/blob/master/LICENSE) for details.
 
 ## Author
 
