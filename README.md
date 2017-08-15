@@ -1,4 +1,6 @@
 # NFCSupport
+![Xcode](https://img.shields.io/badge/Xcode-9.0-brightgreen.svg)
+![Swift](https://img.shields.io/badge/Swift-3.2-brightgreen.svg)
 
 This is support library for handling NFC NDEF Records.
 
