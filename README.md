@@ -1,6 +1,8 @@
 # NFCSupport
 ![Xcode](https://img.shields.io/badge/Xcode-9.0-brightgreen.svg)
 ![Swift](https://img.shields.io/badge/Swift-3.2-brightgreen.svg)
+![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
+![Travis CI](https://travis-ci.org/yshrkt/NFCSupport.svg?branch=master)
 
 This is support library for handling NFC NDEF Records.
 
@@ -58,6 +60,14 @@ To install it, simply add the following line to your `Cartfile`:
 
 ```
 github "yshrkt/NFCSupport"
+```
+
+### CocoaPods
+
+To install it, simply add the following line to your `Podfile`:
+
+```
+pod "NFCSupport"
 ```
 
 ## Licence
