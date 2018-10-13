@@ -80,28 +80,25 @@ extension ViewController: NFCNDEFReaderSessionDelegate {
             return
         }
         
-        let recordType = NFCNDEFWellknown.RecordType(rawData: record.type)
-        if recordType == .text {
-            let textRecord: NFCNDEFWellknown.TextRecord? = try? recordType.parse(with: record.payload)
-            print("\(textRecord?.description ?? "(nil)")")
-            if let text = textRecord?.text {
-                showAlert(title: "Text", message: text)
-                session.invalidate()
-            }
-        }else if recordType == .uri {
-            let uriRecord: NFCNDEFWellknown.URIRecord? = try? recordType.parse(with: record.payload)
-            print("\(uriRecord?.description ?? "(nil)")")
-            if let uri = uriRecord?.uri {
-                showAlert(title: "URI", message: uri.absoluteString)
-                session.invalidate()
-            }
-        }else if recordType == .smartPoster {
-            let posterRecord: NFCNDEFWellknown.SmartPosterRecord? = try? recordType.parse(with: record.payload)
-            print("\(posterRecord?.description ?? "(nil)")")
-            if let uri = posterRecord?.uri {
-                showAlert(title: "Smart Poster", message: uri.absoluteString)
-                session.invalidate()
-            }
+        guard let result = try? NFCNDEFWellknown.parse(type: record.type, payload: record.payload) else {
+            print("can not parse record data")
+            return
+        }
+        
+        switch result {
+        case let .text(record):
+            showAlert(title: "Text", message: record.text)
+            session.invalidate()
+        case let .uri(record):
+            showAlert(title: "URI", message: record.uri?.absoluteString ?? "")
+            session.invalidate()
+        case let .smartPoster(record):
+            let message = "title: \(record.titleRecords.first?.text ?? "")\nuri: \(record.uri?.absoluteString ?? "")"
+            showAlert(title: "Smart Poster", message: message)
+            session.invalidate()
+        case let .unsupported(type):
+            print("unsupported record type (\(type))")
+            session.invalidate()
         }
     }
     
@@ -110,11 +107,13 @@ extension ViewController: NFCNDEFReaderSessionDelegate {
     }
     
     private func showAlert(title: String, message: String, handler: (() -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            handler?()
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                handler?()
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

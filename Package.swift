@@ -1,10 +1,18 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.2
 
 import PackageDescription
 
 let package = Package(
     name: "NFCSupport",
-    targets: [],
+    products: [
+        .library(name: "NFCSupport", type: .dynamic, targets: ["NFCSupport"])
+        ],
     dependencies: [],
-    exclude: []
+    targets: [
+        .target(
+            name: "NFCSupport",
+            dependencies: []
+        ),
+    ],
+    swiftLanguageVersions: [.v4, .v4_2]
 )

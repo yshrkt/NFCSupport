@@ -1,6 +1,6 @@
 # NFCSupport
-![Xcode](https://img.shields.io/badge/Xcode-9.0-brightgreen.svg)
-![Swift](https://img.shields.io/badge/Swift-3.2-brightgreen.svg)
+![Xcode](https://img.shields.io/badge/Xcode-10.0-brightgreen.svg)
+![Swift](https://img.shields.io/badge/Swift-4.2-brightgreen.svg)
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
 ![Travis CI](https://travis-ci.org/yshrkt/NFCSupport.svg?branch=master)
 
@@ -9,7 +9,7 @@ This is support library for handling NFC NDEF Records.
 ## Environment
 
 * iOS11
-* Swift 3.2
+* Swift 4.2
 
 ## Supported record type
 
@@ -19,38 +19,23 @@ This is support library for handling NFC NDEF Records.
 
 ## Usage
 
-* Text Record
 ```swift
-let record: NFCNDEFPayload = getRecord() // get record using CoreNFC
-let recordType = NFCNDEFWellknown.RecordType(rawData: record.type)
-if recordType == .text {
-    let textRecord: NFCNDEFWellknown.TextRecord? = try? recordType.parse(with: record.payload)
-    if let text = textRecord?.text {
-      print("text: \(text)")
-    }
+guard let result = try? NFCNDEFWellknown.parse(type: record.type, payload: record.payload) else {
+    print("can not parse record")
+    return
+}
+
+switch result {
+case let .text(record):
+    print("text: \(record.text)")
+case let .uri(record):
+    print("uri: \(record.uri?.absoluteString ?? "")")
+case let .smartPoster(record):
+    print("title: \(record.titleRecords.first?.text ?? "") uri: \(record.uri?.absoluteString ?? "")")
+case let .unsupported(type):
+    print("unsupported record type (\(type))")
 }
 ```
-* URI Record
-```swift
-if recordType == .uri {
-    let uriRecord: NFCNDEFWellknown.URIRecord? = try? recordType.parse(with: record.payload)
-    if let uri = uriRecord?.uri {
-      print("uri: \(uri.absoluteString)")
-    }
-}
-```
-
-* Smart Poster Record
-```swift
-if recordType == .smartPoster {
-    let spRecord: NFCNDEFWellknown.SmartPosterRecord? = try? recordType.parse(with: record.payload)
-    if let uri = spRecord?.uri {
-      print("uri: \(uri.absoluteString)")
-    }
-}
-```
-
-
 
 ## Installation
 

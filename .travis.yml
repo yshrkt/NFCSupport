@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode10
 xcode_project: NFCSupport.xcodeproj # path to your xcodeproj folder
 xcode_sdk: iphonesimulator
 
 script:
    - pod lib lint --allow-warnings
-   - xcodebuild clean test -scheme NFCSupport -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0'
+   - xcodebuild clean test -scheme NFCSupport -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 8,OS=12.0'

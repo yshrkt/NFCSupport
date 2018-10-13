@@ -19,6 +19,27 @@ public struct NFCNDEFWellknown {
         case unsupported
     }
     
+    public enum ParseResult {
+        case text(record: TextRecord)
+        case uri(record: URIRecord)
+        case smartPoster(record: SmartPosterRecord)
+        case unsupported(type: RecordType)
+    }
+    
+    public static func parse(type: Data, payload: Data) throws -> ParseResult {
+        let recordType = NFCNDEFWellknown.RecordType(rawData: type)
+        switch recordType {
+        case .text:
+            return .text(record: try recordType.parse(with: payload))
+        case .uri:
+            return .uri(record: try recordType.parse(with: payload))
+        case .smartPoster:
+            return .smartPoster(record: try recordType.parse(with: payload))
+        default:
+            return .unsupported(type: recordType)
+        }
+    }
+    
     public enum RecordType {
         case alternativeCarrier
         case handoverCarrier
