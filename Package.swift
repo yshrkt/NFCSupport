@@ -11,8 +11,14 @@ let package = Package(
     targets: [
         .target(
             name: "NFCSupport",
-            dependencies: []
+            dependencies: [],
+            path: "Sources"
         ),
+        .testTarget(
+            name: "NFCSupportTests",
+            dependencies: ["NFCSupport"],
+            path: "Tests"
+        )
     ],
     swiftLanguageVersions: [.v4, .v4_2]
 )
