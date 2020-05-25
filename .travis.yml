@@ -5,4 +5,4 @@ xcode_sdk: iphonesimulator
 
 script:
    - pod lib lint --allow-warnings
-   - xcodebuild clean test -scheme NFCSupport -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 8,OS=13.4'
+   - xcodebuild clean test -scheme NFCSupport -configuration Debug -destination 'platform=iOS Simulator,name=iPhone 8,OS=13.4.1'
