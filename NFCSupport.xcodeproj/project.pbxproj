@@ -46,7 +46,7 @@
 		92C740DB1F3DD006007CE205 /* NFCNDEFWellknownTextRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFWellknownTextRecordTests.swift; sourceTree = "<group>"; };
 		92C740DD1F3DD018007CE205 /* NFCNDEFWellknownURIRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFWellknownURIRecordTests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* NFCSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NFCSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_14 /* NFCSupportTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = NFCSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_14 /* NFCSupportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = NFCSupportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,12 +181,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					OBJ_15 = {
+						LastSwiftMigration = 1140;
+					};
+					OBJ_22 = {
+						DevelopmentTeam = 7A4SW8L4U6;
+						LastSwiftMigration = 1140;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "NFCSupport" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = OBJ_5;
@@ -256,6 +266,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = NFCSupport;
 			};
 			name = Debug;
@@ -278,6 +289,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = NFCSupport;
 			};
 			name = Release;
@@ -285,6 +297,8 @@
 		OBJ_24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 7A4SW8L4U6;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -295,6 +309,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = NFCSupportTests;
 			};
 			name = Debug;
@@ -302,6 +317,8 @@
 		OBJ_25 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 7A4SW8L4U6;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,6 +329,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
 				TARGET_NAME = NFCSupportTests;
 			};
 			name = Release;

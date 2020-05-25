@@ -19,7 +19,7 @@ extension NFCNDEFWellknown {
         static let idLength     = RecordHeader(rawValue: 1 << 3)
         
         // Type name format
-        static let tnfEmpty       = RecordHeader(rawValue: 0)
+        static let tnfEmpty       = RecordHeader([])
         static let tnfWellknown   = RecordHeader(rawValue: 1)
         static let tnfMedia       = RecordHeader(rawValue: 2)
         static let tnfAbsoluteURI = RecordHeader(rawValue: 3)

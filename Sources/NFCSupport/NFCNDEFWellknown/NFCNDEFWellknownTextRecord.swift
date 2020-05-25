@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NFCNDEFWellknown {
-    public struct TextRecord: NFCNDEFWellknownRecord {
+    struct TextRecord: NFCNDEFWellknownRecord {
         public let encoding: String.Encoding
         public let languageCode: String
         public let text: String

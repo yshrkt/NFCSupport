@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9249EE3A1F3E0E6200740350 /* NFCSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9249EE351F3E0D4800740350 /* NFCSupport.framework */; };
-		9249EE3B1F3E0E6200740350 /* NFCSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9249EE351F3E0D4800740350 /* NFCSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9258125D247C6A9E00BBFB2D /* NFCSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9249EE351F3E0D4800740350 /* NFCSupport.framework */; };
+		9258125E247C6A9E00BBFB2D /* NFCSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9249EE351F3E0D4800740350 /* NFCSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92C740EC1F3DE04A007CE205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C740EB1F3DE04A007CE205 /* AppDelegate.swift */; };
 		92C740EE1F3DE04A007CE205 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C740ED1F3DE04A007CE205 /* ViewController.swift */; };
 		92C740F11F3DE04A007CE205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C740EF1F3DE04A007CE205 /* Main.storyboard */; };
@@ -17,13 +17,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9249EE3C1F3E0E6200740350 /* Embed Frameworks */ = {
+		9258125F247C6A9E00BBFB2D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9249EE3B1F3E0E6200740350 /* NFCSupport.framework in Embed Frameworks */,
+				9258125E247C6A9E00BBFB2D /* NFCSupport.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9249EE3A1F3E0E6200740350 /* NFCSupport.framework in Frameworks */,
+				9258125D247C6A9E00BBFB2D /* NFCSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 				92C740E41F3DE04A007CE205 /* Sources */,
 				92C740E51F3DE04A007CE205 /* Frameworks */,
 				92C740E61F3DE04A007CE205 /* Resources */,
-				9249EE3C1F3E0E6200740350 /* Embed Frameworks */,
+				9258125F247C6A9E00BBFB2D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +126,7 @@
 				TargetAttributes = {
 					92C740E71F3DE04A007CE205 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.NearFieldCommunicationTagReading = {
@@ -328,7 +329,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -354,7 +355,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

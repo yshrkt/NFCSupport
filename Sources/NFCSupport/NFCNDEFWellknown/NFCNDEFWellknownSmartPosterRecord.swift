@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NFCNDEFWellknown {
-    public struct SmartPosterRecord: NFCNDEFWellknownRecord {
+    struct SmartPosterRecord: NFCNDEFWellknownRecord {
         public let uriRecord: URIRecord
         public let actionRecord: ActionRecord?
         public let titleRecords: [TextRecord]

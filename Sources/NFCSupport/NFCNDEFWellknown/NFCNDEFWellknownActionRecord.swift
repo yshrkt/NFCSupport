@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NFCNDEFWellknown {
-    public struct ActionRecord: NFCNDEFWellknownRecord {
+    struct ActionRecord: NFCNDEFWellknownRecord {
         public enum Action {
             case doTheAction
             case saveForLater

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NFCNDEFWellknown {
-    public struct URIRecord: NFCNDEFWellknownRecord {
+    struct URIRecord: NFCNDEFWellknownRecord {
         public enum Identifier: UInt8 {
             case none = 0x00
             case httpWww = 0x01

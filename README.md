@@ -1,6 +1,6 @@
 # NFCSupport
-![Xcode](https://img.shields.io/badge/Xcode-10.0-brightgreen.svg)
-![Swift](https://img.shields.io/badge/Swift-4.2-brightgreen.svg)
+![Xcode](https://img.shields.io/badge/Xcode-11.4.1-brightgreen.svg)
+![Swift](https://img.shields.io/badge/Swift-5.2-brightgreen.svg)
 ![platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
 ![Travis CI](https://travis-ci.org/yshrkt/NFCSupport.svg?branch=master)
 
@@ -9,7 +9,7 @@ This is support library for handling NFC NDEF Records.
 ## Environment
 
 * iOS11
-* Swift 4.2
+* Swift 5.2
 
 ## Supported record type
 
