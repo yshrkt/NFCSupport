@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9258125D247C6A9E00BBFB2D /* NFCSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9249EE351F3E0D4800740350 /* NFCSupport.framework */; };
-		9258125E247C6A9E00BBFB2D /* NFCSupport.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9249EE351F3E0D4800740350 /* NFCSupport.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		92B2BCF324B313E30097A9F5 /* NFCSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 92B2BCF224B313E30097A9F5 /* NFCSupport */; };
+		92B2BCF424B313E30097A9F5 /* NFCSupport in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 92B2BCF224B313E30097A9F5 /* NFCSupport */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		92C740EC1F3DE04A007CE205 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C740EB1F3DE04A007CE205 /* AppDelegate.swift */; };
 		92C740EE1F3DE04A007CE205 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C740ED1F3DE04A007CE205 /* ViewController.swift */; };
 		92C740F11F3DE04A007CE205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C740EF1F3DE04A007CE205 /* Main.storyboard */; };
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9258125E247C6A9E00BBFB2D /* NFCSupport.framework in Embed Frameworks */,
+				92B2BCF424B313E30097A9F5 /* NFCSupport in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,7 +31,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9249EE351F3E0D4800740350 /* NFCSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NFCSupport.framework; sourceTree = "<group>"; };
 		92C740E81F3DE04A007CE205 /* NFCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NFCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C740EB1F3DE04A007CE205 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92C740ED1F3DE04A007CE205 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,25 +46,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9258125D247C6A9E00BBFB2D /* NFCSupport.framework in Frameworks */,
+				92B2BCF324B313E30097A9F5 /* NFCSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9249EE321F3E0CE400740350 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9249EE351F3E0D4800740350 /* NFCSupport.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		92C740DF1F3DE04A007CE205 = {
 			isa = PBXGroup;
 			children = (
-				9249EE321F3E0CE400740350 /* Frameworks */,
 				92C740EA1F3DE04A007CE205 /* NFCSample */,
 				92C740E91F3DE04A007CE205 /* Products */,
 			);
@@ -110,6 +100,9 @@
 			dependencies = (
 			);
 			name = NFCSample;
+			packageProductDependencies = (
+				92B2BCF224B313E30097A9F5 /* NFCSupport */,
+			);
 			productName = NFCSample;
 			productReference = 92C740E81F3DE04A007CE205 /* NFCSample.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 92C740DF1F3DE04A007CE205;
+			packageReferences = (
+				92B2BCF124B313E30097A9F5 /* XCRemoteSwiftPackageReference "NFCSupport" */,
+			);
 			productRefGroup = 92C740E91F3DE04A007CE205 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -303,7 +299,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -324,7 +321,10 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = NFCSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sputnik-apps.nfc-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -350,7 +350,10 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = NFCSample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sputnik-apps.nfc-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -382,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		92B2BCF124B313E30097A9F5 /* XCRemoteSwiftPackageReference "NFCSupport" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yshrkt/NFCSupport.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		92B2BCF224B313E30097A9F5 /* NFCSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 92B2BCF124B313E30097A9F5 /* XCRemoteSwiftPackageReference "NFCSupport" */;
+			productName = NFCSupport;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 92C740E01F3DE04A007CE205 /* Project object */;
 }
